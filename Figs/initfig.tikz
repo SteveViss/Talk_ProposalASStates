@@ -1,0 +1,44 @@
+\begin{center}
+
+\tikzstyle{noeud}=[circle,
+    thick,
+    minimum size = 1.5cm,
+    inner sep =5pt,
+    draw=brewforest3,
+    fill=brewforest1]
+\tikzstyle{noeud2}=[circle,
+    thick,
+    minimum size = 1cm,
+    inner sep =5pt,
+    draw=brewforest3,
+    fill=brewforest3]
+\tikzstyle{noeud3}=[circle,
+    thick,
+    minimum size = 1.5cm,
+    inner sep =5pt,
+    draw=brewforest3,
+    fill=brewforest3]
+
+\begin{tikzpicture}[->,>=stealth',auto,scale=0.45]
+    \node [circle,noeud2] (M) at (0,0) {\color{white}\textbf{M}};
+    \node [circle,noeud2] (C) at (-5,5) {\color{white}\textbf{C}};
+    \node [circle,noeud2] (D) at (5,5) {\color{white}\textbf{D}};
+    \node [circle,noeud2] (T) at (0,10) {\color{white}\textbf{T}};
+
+    \draw[thick,-latex] (M) to[bend right=10] node[above,sloped] {} (C);
+    \draw[thick,-latex] (C) to[bend right=10] node[below,sloped] {} (M);
+
+    \draw[thick,-latex] (D) to[bend right=10] node[above,sloped] {} (M);
+    \draw[thick,-latex] (M) to[bend right=10] node[below,sloped] {} (D);
+
+    \draw[thick,-latex] (D) to[bend right=10] node[above,sloped] {} (T);
+    \draw[thick,-latex] (T) to[bend right=10] node[below,sloped] {} (D);
+
+    \draw[thick,-latex] (T) to[bend right=10] node[above,sloped] {} (C);
+    \draw[thick,-latex] (C) to[bend right=10] node[below,sloped] {} (T);
+
+    \draw[thick,-latex,transform canvas={xshift=0.6ex}] (T) to node[above,sloped,rotate=90,transform canvas={xshift=1.5ex}] {} (M);
+    \draw[thick,-latex,transform canvas={xshift=-0.6ex}] (M) to node[above,sloped,rotate=-90,transform canvas={xshift=-1.5ex}] {} (T);
+\end{tikzpicture}
+\end{center}
+

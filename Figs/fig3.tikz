@@ -1,0 +1,44 @@
+\begin{center}
+
+\tikzstyle{noeud}=[circle,
+	thick,
+	minimum size = 1.5cm,
+	inner sep =5pt,
+	draw=brewforest3,
+	fill=brewforest1]
+\tikzstyle{noeud2}=[circle,
+	thick,
+	minimum size = 1cm,
+	inner sep =5pt,
+	draw=brewforest3,
+	fill=brewforest3]
+\tikzstyle{noeud3}=[circle,
+	thick,
+	minimum size = 1.5cm,
+	inner sep =5pt,
+	draw=brewforest3,
+	fill=brewforest3]
+
+\begin{tikzpicture}[->,>=stealth',auto,scale=0.38]
+	\node [circle,noeud2] (M) at (0,0) {\color{white}\textbf{M}};
+	\node [circle,noeud2] (C) at (-5,5) {\color{white}\textbf{C}};
+	\node [circle,noeud2] (D) at (5,5) {\color{white}\textbf{D}};
+	\node [circle,noeud2] (T) at (0,10) {\color{white}\textbf{T}};
+
+	\draw[thick,-latex] (M) to[bend right=10] node[above,sloped] {$\theta_c$} (C);
+	\draw[thick,-latex] (C) to[bend right=10] node[below,sloped] {$\beta_d \cdot (D+M)$} (M);
+
+	\draw[thick,-latex] (D) to[bend right=10] node[above,sloped] {$\beta_c \cdot (C+M)$} (M);
+	\draw[thick,-latex] (M) to[bend right=10] node[below,sloped] {$\theta_d$} (D);
+
+	\draw[thick,-latex] (D) to[bend right=10] node[above,sloped] {$\epsilon$} (T);
+	\draw[thick,-latex] (T) to[bend right=10] node[below,sloped] {$\phi_d$} (D);
+
+	\draw[thick,-latex] (T) to[bend right=10] node[above,sloped] {$\phi_c$} (C);
+	\draw[thick,-latex] (C) to[bend right=10] node[below,sloped] {$\epsilon$} (T);
+
+	\draw[thick,-latex,transform canvas={xshift=0.6ex}] (T) to node[above,sloped,rotate=90,transform canvas={xshift=1.5ex}] {$\phi_m $} (M);
+	\draw[thick,-latex,transform canvas={xshift=-0.6ex}] (M) to node[above,sloped,rotate=-90,transform canvas={xshift=-1.5ex}] {$\epsilon$} (T);
+\end{tikzpicture}
+\end{center}
+
